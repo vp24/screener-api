@@ -61,6 +61,7 @@ async function getFirstLinkFromGoogleSearch(query) {
       .trim();
     firstLinkData.push(trText);
   });
+  
 
   const secondLinkData = [];
   const financialsResponse = await axios.get(`${firstLink}financials/`);
@@ -82,7 +83,7 @@ async function getFirstLinkFromGoogleSearch(query) {
       .get();
     secondLinkData.push(rowData);
   });
-
+  console.log(firstLinkData)
   return { firstLink, firstLinkData, secondLinkData };
 }
 
